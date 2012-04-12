@@ -15,3 +15,4 @@ venusian==1.0a3
 wsgiref==0.1.2
 zope.deprecation==3.5.1
 zope.interface==3.8.0
+setuptools
