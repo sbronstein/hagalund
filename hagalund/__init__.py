@@ -1,6 +1,7 @@
 from pyramid.config import Configurator
 from pyramid.events import subscriber
 from pyramid.events import NewRequest
+import os
 import pymongo
 
 from hagalund.resources import Root
@@ -21,6 +22,9 @@ def main(global_config, **settings):
         db = settings['mongodb_conn'][db_name]
         event.request.db = db
     db_uri = settings['mongodb.url']
+    # Heroku MongoLab support
+    if os.getenv('MONGOLAB_URI'):
+        db_uri = os.getenv('MONGOLAB_URI')
     MongoDB = pymongo.Connection
     if 'pyramid_debugtoolbar' in set(settings.values()):
         class MongoDB(pymongo.Connection):
