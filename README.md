@@ -12,4 +12,4 @@ to create the app with the Cedar stack (to get Python support):
 
 Additionally, you should provision a (free) MongoLab MongoDB database:
 
-    heroku addons:add mongolab:starter --app niallo-pyramid-test
+    heroku addons:add mongolab:starter --app <app name>
