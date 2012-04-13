@@ -31,6 +31,7 @@ def main(global_config, **settings):
 
     username = parsed_db_uri.get("username")
     password = parsed_db_uri.get("password")
+    settings['mongodb.db_name'] = parsed_db_uri.get('database')
 
 
     MongoDB = pymongo.Connection
